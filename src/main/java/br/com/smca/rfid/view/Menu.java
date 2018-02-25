@@ -9,12 +9,12 @@ package br.com.smca.rfid.view;
  *
  * @author Gleywson
  */
-public class TelaMenu extends javax.swing.JFrame {
+public class Menu extends javax.swing.JFrame {
 
     /**
-     * Creates new form TelaMenu
+     * Creates new form Menu
      */
-    public TelaMenu() {
+    public Menu() {
         initComponents();
     }
 
@@ -27,39 +27,24 @@ public class TelaMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        desktop = new javax.swing.JDesktopPane();
+        desktopPane = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        itemMenuCadastroMorador = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        javax.swing.GroupLayout desktopLayout = new javax.swing.GroupLayout(desktop);
-        desktop.setLayout(desktopLayout);
-        desktopLayout.setHorizontalGroup(
-            desktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 659, Short.MAX_VALUE)
-        );
-        desktopLayout.setVerticalGroup(
-            desktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 279, Short.MAX_VALUE)
-        );
+        jMenu1.setText("Cadastro");
 
-        getContentPane().add(desktop, java.awt.BorderLayout.CENTER);
-
-        jMenuBar1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-
-        jMenu1.setText("Cadastros");
-        jMenu1.addActionListener(new java.awt.event.ActionListener() {
+        itemMenuCadastroMorador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/add-user.png"))); // NOI18N
+        itemMenuCadastroMorador.setText("Cadastro de Morador");
+        itemMenuCadastroMorador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu1ActionPerformed(evt);
+                itemMenuCadastroMoradorActionPerformed(evt);
             }
         });
-
-        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/add-user.png"))); // NOI18N
-        jMenuItem1.setText("Cadastro de Morador");
-        jMenu1.add(jMenuItem1);
+        jMenu1.add(itemMenuCadastroMorador);
 
         jMenuBar1.add(jMenu1);
 
@@ -68,15 +53,26 @@ public class TelaMenu extends javax.swing.JFrame {
 
         setJMenuBar(jMenuBar1);
 
-        setBounds(0, 0, 675, 339);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 616, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 282, Short.MAX_VALUE)
+        );
+
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
+    private void itemMenuCadastroMoradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemMenuCadastroMoradorActionPerformed
         // TODO add your handling code here:
-        CadastroMorador cadastroMorador = new CadastroMorador();
-        desktop.add(cadastroMorador);
-        cadastroMorador.setVisible(true);
-    }//GEN-LAST:event_jMenu1ActionPerformed
+        CadastroMorador cm = new CadastroMorador();
+        desktopPane.add(cm);
+        cm.setVisible(true);
+    }//GEN-LAST:event_itemMenuCadastroMoradorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -95,29 +91,29 @@ public class TelaMenu extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaMenu().setVisible(true);
+                new Menu().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JDesktopPane desktop;
+    private javax.swing.JDesktopPane desktopPane;
+    private javax.swing.JMenuItem itemMenuCadastroMorador;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
     // End of variables declaration//GEN-END:variables
 }
