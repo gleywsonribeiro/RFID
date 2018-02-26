@@ -5,6 +5,8 @@
  */
 package br.com.smca.rfid.view;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author Gleywson
@@ -71,7 +73,9 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
         CadastroMorador cm = new CadastroMorador();
         desktopPane.add(cm);
+        cm.requestFocus();
         cm.setVisible(true);
+        
     }//GEN-LAST:event_itemMenuCadastroMoradorActionPerformed
 
     /**
@@ -104,7 +108,9 @@ public class Menu extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Menu().setVisible(true);
+                Menu menu = new Menu();
+                menu.setExtendedState(JFrame.MAXIMIZED_BOTH);
+                menu.setVisible(true);
             }
         });
     }

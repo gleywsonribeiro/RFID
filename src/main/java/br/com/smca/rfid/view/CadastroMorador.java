@@ -52,7 +52,7 @@ public class CadastroMorador extends javax.swing.JInternalFrame {
         jLabel12 = new javax.swing.JLabel();
         fieldCelularMorador = new javax.swing.JTextField();
 
-        setIconifiable(true);
+        setClosable(true);
         setMaximizable(true);
         setTitle("Cadastro de Moradores");
         setVisible(true);
