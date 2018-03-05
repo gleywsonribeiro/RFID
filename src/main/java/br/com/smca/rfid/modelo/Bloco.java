@@ -21,8 +21,7 @@ import javax.persistence.OneToMany;
 @Entity
 public class Bloco implements Serializable {
 
-    @OneToMany(mappedBy = "bloco")
-    private List<Apartamento> apartamentos;
+   
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -40,13 +39,6 @@ public class Bloco implements Serializable {
         this.nome = nome;
     }
 
-    public List<Apartamento> getApartamentos() {
-        return apartamentos;
-    }
-
-    public void setApartamentos(List<Apartamento> apartamentos) {
-        this.apartamentos = apartamentos;
-    }
     
     public Long getId() {
         return id;

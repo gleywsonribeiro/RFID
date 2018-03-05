@@ -7,14 +7,14 @@ package br.com.smca.rfid.modelo;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 
 /**
@@ -22,7 +22,7 @@ import javax.persistence.Temporal;
  * @author Gleywson
  */
 @Entity
-public class Condomino implements Serializable {
+public class Morador implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -35,42 +35,78 @@ public class Condomino implements Serializable {
     @Column(nullable = false, length = 10)
     private String tag;
     
+    @Column(nullable = false, length = 15)
+    private String numeroGaragem;
+    
     @Column(nullable = false, length = 10, name = "placa_veiculo")
     private String placaVeiculo;
+    
+    @Column(nullable = false, length = 10)
+    private String Apartamento;
+    
+    @ManyToOne
+    @JoinColumn(nullable = false)
+    private Bloco bloco;
     
     @Lob
     private byte[] foto;
     private boolean ativo;
+    
     @Column(length = 20)
     private String cpf;
+    
+    @Column(length = 15)
+    private String rg;
+
+    public String getNumeroGaragem() {
+        return numeroGaragem;
+    }
+
+    public void setNumeroGaragem(String numeroGaragem) {
+        this.numeroGaragem = numeroGaragem;
+    }
+    
+    
 
     @Column(name = "data_cadastro", nullable = false)
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date dataCadastro;
     
-    @OneToMany(mappedBy = "condomino")
-    private List<Apartamento> apartamentos;
 
-    public Condomino() {
+    public Morador() {
         this.dataCadastro = new Date();
     }
 
-    public List<Apartamento> getApartamentos() {
-        return apartamentos;
-    }
-
-    public void setApartamentos(List<Apartamento> apartamentos) {
-        this.apartamentos = apartamentos;
-    }
-
-    
-    
     public String getNome() {
         return nome;
     }
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public String getRg() {
+        return rg;
+    }
+
+    public void setRg(String rg) {
+        this.rg = rg;
+    }
+
+    public String getApartamento() {
+        return Apartamento;
+    }
+
+    public void setApartamento(String Apartamento) {
+        this.Apartamento = Apartamento;
+    }
+
+    public Bloco getBloco() {
+        return bloco;
+    }
+
+    public void setBloco(Bloco bloco) {
+        this.bloco = bloco;
     }
 
     public String getTag() {
@@ -141,10 +177,10 @@ public class Condomino implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Condomino)) {
+        if (!(object instanceof Morador)) {
             return false;
         }
-        Condomino other = (Condomino) object;
+        Morador other = (Morador) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }

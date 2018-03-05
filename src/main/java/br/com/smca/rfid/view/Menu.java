@@ -42,7 +42,6 @@ public class Menu extends javax.swing.JFrame {
         jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/casa.png"))); // NOI18N
         jMenu1.setText("Cadastro");
 
-        itemMenuCadastroMorador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/add-user.png"))); // NOI18N
         itemMenuCadastroMorador.setText("Cadastro de Morador");
         itemMenuCadastroMorador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -51,7 +50,6 @@ public class Menu extends javax.swing.JFrame {
         });
         jMenu1.add(itemMenuCadastroMorador);
 
-        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/bloco.png"))); // NOI18N
         jMenuItem1.setText("Pesquisa de Morador");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -141,7 +139,7 @@ public class Menu extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 Menu menu = new Menu();
-                //menu.setExtendedState(JFrame.MAXIMIZED_BOTH);
+                menu.setExtendedState(JFrame.MAXIMIZED_BOTH);
                 menu.setVisible(true);
             }
         });

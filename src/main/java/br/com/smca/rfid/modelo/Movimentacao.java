@@ -37,7 +37,7 @@ public class Movimentacao implements Serializable {
     
     @ManyToOne
     @JoinColumn(nullable = false)
-    private Condomino condomino;
+    private Morador condomino;
 
     public Long getId() {
         return id;
@@ -63,11 +63,11 @@ public class Movimentacao implements Serializable {
         this.tipo = tipo;
     }
 
-    public Condomino getCondomino() {
+    public Morador getCondomino() {
         return condomino;
     }
 
-    public void setCondomino(Condomino condomino) {
+    public void setCondomino(Morador condomino) {
         this.condomino = condomino;
     }
 

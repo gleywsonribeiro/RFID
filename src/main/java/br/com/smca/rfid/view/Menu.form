@@ -14,9 +14,6 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="itemMenuCadastroMorador">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/imagens/add-user.png"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Cadastro de Morador"/>
               </Properties>
               <Events>
@@ -25,9 +22,6 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/imagens/bloco.png"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Pesquisa de Morador"/>
               </Properties>
               <Events>
