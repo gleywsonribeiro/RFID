@@ -9,6 +9,8 @@ import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -32,8 +34,9 @@ public class Movimentacao implements Serializable {
     @Temporal(javax.persistence.TemporalType.TIMESTAMP)
     private Date dataMovimentacao;
     
-    @Column(nullable = false)
-    private char tipo;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "tipo_movimentacao", length = 1)
+    private TipoMovimentacao tipoMovimentacao;
     
     @ManyToOne
     @JoinColumn(nullable = false)
@@ -55,13 +58,15 @@ public class Movimentacao implements Serializable {
         this.dataMovimentacao = dataMovimentacao;
     }
 
-    public char getTipo() {
-        return tipo;
+    public TipoMovimentacao getTipoMovimentacao() {
+        return tipoMovimentacao;
     }
 
-    public void setTipo(char tipo) {
-        this.tipo = tipo;
+    public void setTipoMovimentacao(TipoMovimentacao tipoMovimentacao) {
+        this.tipoMovimentacao = tipoMovimentacao;
     }
+
+   
 
     public Morador getCondomino() {
         return condomino;

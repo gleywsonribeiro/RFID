@@ -28,50 +28,48 @@ public class Morador implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
     @Column(nullable = false, length = 50)
     private String nome;
-    
+
     @Column(nullable = false, length = 10)
     private String tag;
-    
+
     @Column(nullable = false, length = 15)
     private String numeroGaragem;
-    
+
     @Column(nullable = false, length = 10, name = "placa_veiculo")
     private String placaVeiculo;
-    
+
     @Column(nullable = false, length = 10)
     private String Apartamento;
+
+    @Column(length = 5)
+    private String andar;
     
+    @Column(length = 20)
+    private String telefone;
+    
+    @Column(length = 20)
+    private String celular;
+
     @ManyToOne
     @JoinColumn(nullable = false)
     private Bloco bloco;
-    
+
     @Lob
     private byte[] foto;
     private boolean ativo;
-    
+
     @Column(length = 20)
     private String cpf;
-    
+
     @Column(length = 15)
     private String rg;
-
-    public String getNumeroGaragem() {
-        return numeroGaragem;
-    }
-
-    public void setNumeroGaragem(String numeroGaragem) {
-        this.numeroGaragem = numeroGaragem;
-    }
-    
-    
 
     @Column(name = "data_cadastro", nullable = false)
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date dataCadastro;
-    
 
     public Morador() {
         this.dataCadastro = new Date();
@@ -85,12 +83,44 @@ public class Morador implements Serializable {
         this.nome = nome;
     }
 
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public String getCelular() {
+        return celular;
+    }
+
+    public void setCelular(String celular) {
+        this.celular = celular;
+    }
+
     public String getRg() {
         return rg;
     }
 
     public void setRg(String rg) {
         this.rg = rg;
+    }
+
+    public String getNumeroGaragem() {
+        return numeroGaragem;
+    }
+
+    public void setNumeroGaragem(String numeroGaragem) {
+        this.numeroGaragem = numeroGaragem;
+    }
+
+    public String getAndar() {
+        return andar;
+    }
+
+    public void setAndar(String andar) {
+        this.andar = andar;
     }
 
     public String getApartamento() {
@@ -156,9 +186,7 @@ public class Morador implements Serializable {
     public void setDataCadastro(Date dataCadastro) {
         this.dataCadastro = dataCadastro;
     }
-    
-    
-    
+
     public Long getId() {
         return id;
     }
@@ -191,5 +219,5 @@ public class Morador implements Serializable {
     public String toString() {
         return "br.com.smca.modelo.Condomino[ id=" + id + " ]";
     }
-    
+
 }
