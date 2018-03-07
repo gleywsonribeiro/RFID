@@ -89,10 +89,12 @@ public class Menu extends javax.swing.JFrame {
 
     private void itemMenuCadastroMoradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemMenuCadastroMoradorActionPerformed
         // TODO add your handling code here:
-        CadastroMorador cadastroMorador = new CadastroMorador();
-        desktopPane.add(cadastroMorador);
+//        CadastroMorador cadastroMorador = new CadastroMorador();
+        CadMorador cadMorador = new CadMorador();
+        
+        desktopPane.add(cadMorador);
         //cm.requestFocus();
-        cadastroMorador.setVisible(true);
+        cadMorador.setVisible(true);
         
     }//GEN-LAST:event_itemMenuCadastroMoradorActionPerformed
 
