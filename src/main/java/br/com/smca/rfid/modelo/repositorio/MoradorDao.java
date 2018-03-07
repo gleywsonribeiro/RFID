@@ -38,7 +38,7 @@ public class MoradorDao {
         em.close();
     }
 
-    public List<Morador> pesquisar(Morador bloco) {
+    public List<Morador> pesquisar(Morador morador) {
         EntityManager em = Conexao.getEntityManager();
 //        StringBuilder sql = new StringBuilder("from Bloco b "
 //                + "where 1 = 1 ");
