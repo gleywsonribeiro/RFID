@@ -5,6 +5,7 @@
  */
 package br.com.smca.rfid.modelo;
 
+import br.com.smca.rfid.util.ValidacaoException;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Column;
@@ -66,6 +67,12 @@ public class Bloco implements Serializable {
             return false;
         }
         return true;
+    }
+    
+    public void validar() throws ValidacaoException {
+        if(this.nome == null || this.nome.equals("")) {
+            throw new ValidacaoException("Campo nome não preenchido!");
+        }
     }
 
     @Override

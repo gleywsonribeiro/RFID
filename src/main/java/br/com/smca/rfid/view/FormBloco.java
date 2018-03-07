@@ -6,6 +6,7 @@
 package br.com.smca.rfid.view;
 
 import br.com.smca.rfid.controller.BlocoControl;
+import br.com.smca.rfid.util.ValidacaoException;
 import javax.swing.JOptionPane;
 
 /**
@@ -204,8 +205,12 @@ public class FormBloco extends javax.swing.JInternalFrame {
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
         // TODO add your handling code here:
-        blocoControl.salvar();
+        try {
+            blocoControl.salvar();
         JOptionPane.showMessageDialog(this, "Salvo com sucesso!", "Cadastro Bloco", JOptionPane.INFORMATION_MESSAGE);
+        } catch (ValidacaoException e) {
+            JOptionPane.showMessageDialog(this, e.getMessage(), "Falha de Validação", JOptionPane.WARNING_MESSAGE);
+        }
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed

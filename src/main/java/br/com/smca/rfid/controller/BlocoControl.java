@@ -7,6 +7,9 @@ package br.com.smca.rfid.controller;
 
 import br.com.smca.rfid.modelo.Bloco;
 import br.com.smca.rfid.modelo.repositorio.BlocoDao;
+import br.com.smca.rfid.modelo.repositorio.BlocoDaoImpl;
+import br.com.smca.rfid.modelo.service.ServiceLocator;
+import br.com.smca.rfid.util.ValidacaoException;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import java.util.ArrayList;
@@ -27,7 +30,7 @@ public final class BlocoControl {
     private final BlocoDao blocoDao;
 
     public BlocoControl() {
-        blocoDao = new BlocoDao();
+        blocoDao = ServiceLocator.getBlocoDao();
         blocosTabela = ObservableCollections.observableList(new ArrayList<>());
         
         novo();
@@ -72,7 +75,8 @@ public final class BlocoControl {
         this.blocosTabela = blocosTabela;
     }
     
-    public void salvar() {
+    public void salvar() throws ValidacaoException  {
+        blocoDigitado.validar();
         blocoDao.salvarAtualizar(blocoDigitado);
         novo();
         pesquisar();
