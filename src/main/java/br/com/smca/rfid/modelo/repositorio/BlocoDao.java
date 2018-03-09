@@ -20,4 +20,5 @@ public interface BlocoDao {
 
     void salvarAtualizar(Bloco bloco);
     
+    List<Bloco> listar();
 }

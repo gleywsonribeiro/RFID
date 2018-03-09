@@ -62,4 +62,11 @@ public class BlocoDaoImpl implements BlocoDao {
         }
         return query.getResultList();
     }
+
+    @Override
+    public List<Bloco> listar() {
+        EntityManager em = Conexao.getEntityManager();
+        Query query = em.createQuery("SELECT b FROM Bloco", Bloco.class);
+        return query.getResultList();
+    }
 }
