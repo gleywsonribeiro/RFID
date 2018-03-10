@@ -229,11 +229,6 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="jTextField1">
-                  <BindingProperties>
-                    <BindingProperty name="text" source="Form" sourcePath="${moradorControl.moradorDigitado.id}" target="jTextField1" targetPath="text" updateStrategy="0" immediately="false">
-                      <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
-                    </BindingProperty>
-                  </BindingProperties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel2">
                   <Properties>
@@ -241,18 +236,8 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="jTextField2">
-                  <BindingProperties>
-                    <BindingProperty name="text" source="Form" sourcePath="${moradorControl.moradorDigitado.nome}" target="jTextField2" targetPath="text" updateStrategy="0" immediately="false">
-                      <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
-                    </BindingProperty>
-                  </BindingProperties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="jTextField3">
-                  <BindingProperties>
-                    <BindingProperty name="text" source="Form" sourcePath="${moradorControl.moradorDigitado.dataCadastro}" target="jTextField3" targetPath="text" updateStrategy="0" immediately="false">
-                      <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
-                    </BindingProperty>
-                  </BindingProperties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel3">
                   <Properties>
@@ -287,18 +272,8 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="jTextField4">
-                  <BindingProperties>
-                    <BindingProperty name="text" source="Form" sourcePath="${moradorControl.moradorDigitado.andar}" target="jTextField4" targetPath="text" updateStrategy="0" immediately="false">
-                      <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
-                    </BindingProperty>
-                  </BindingProperties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="jTextField5">
-                  <BindingProperties>
-                    <BindingProperty name="text" source="Form" sourcePath="${moradorControl.moradorDigitado.apartamento}" target="jTextField5" targetPath="text" updateStrategy="0" immediately="false">
-                      <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
-                    </BindingProperty>
-                  </BindingProperties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel5">
                   <Properties>
@@ -317,7 +292,7 @@
                     </Property>
                   </Properties>
                   <BindingProperties>
-                    <BindingProperty name="selectedItem" source="Form" sourcePath="${moradorControl.moradorDigitado.bloco}" target="jComboBox1" targetPath="selectedItem" updateStrategy="0" immediately="false"/>
+                    <BindingProperty name="elements" source="Form" sourcePath="${moradorControl.blocos.nome}" target="jComboBox1" targetPath="elements" updateStrategy="0" immediately="false"/>
                   </BindingProperties>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -332,9 +307,6 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Ativo"/>
                   </Properties>
-                  <BindingProperties>
-                    <BindingProperty name="selected" source="Form" sourcePath="${moradorControl.moradorDigitado.ativo}" target="jCheckBox1" targetPath="selected" updateStrategy="0" immediately="false"/>
-                  </BindingProperties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel7">
                   <Properties>
@@ -342,11 +314,6 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="jTextField6">
-                  <BindingProperties>
-                    <BindingProperty name="text" source="Form" sourcePath="${moradorControl.moradorDigitado.cpf}" target="jTextField6" targetPath="text" updateStrategy="0" immediately="false">
-                      <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
-                    </BindingProperty>
-                  </BindingProperties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel8">
                   <Properties>
@@ -354,25 +321,10 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="jTextField7">
-                  <BindingProperties>
-                    <BindingProperty name="text" source="Form" sourcePath="${moradorControl.moradorDigitado.rg}" target="jTextField7" targetPath="text" updateStrategy="0" immediately="false">
-                      <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
-                    </BindingProperty>
-                  </BindingProperties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="jTextField8">
-                  <BindingProperties>
-                    <BindingProperty name="text" source="Form" sourcePath="${moradorControl.moradorDigitado.celular}" target="jTextField8" targetPath="text" updateStrategy="0" immediately="false">
-                      <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
-                    </BindingProperty>
-                  </BindingProperties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="jTextField9">
-                  <BindingProperties>
-                    <BindingProperty name="text" source="Form" sourcePath="${moradorControl.moradorDigitado.telefone}" target="jTextField9" targetPath="text" updateStrategy="0" immediately="false">
-                      <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
-                    </BindingProperty>
-                  </BindingProperties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel9">
                   <Properties>
@@ -448,18 +400,8 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="jTextField10">
-                  <BindingProperties>
-                    <BindingProperty name="text" source="Form" sourcePath="${moradorControl.moradorDigitado.placaVeiculo}" target="jTextField10" targetPath="text" updateStrategy="0" immediately="false">
-                      <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
-                    </BindingProperty>
-                  </BindingProperties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="jTextField11">
-                  <BindingProperties>
-                    <BindingProperty name="text" source="Form" sourcePath="${moradorControl.moradorDigitado.tag}" target="jTextField11" targetPath="text" updateStrategy="0" immediately="false">
-                      <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
-                    </BindingProperty>
-                  </BindingProperties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel12">
                   <Properties>
@@ -467,11 +409,6 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="jTextField12">
-                  <BindingProperties>
-                    <BindingProperty name="text" source="Form" sourcePath="${moradorControl.moradorDigitado.numeroGaragem}" target="jTextField12" targetPath="text" updateStrategy="0" immediately="false">
-                      <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
-                    </BindingProperty>
-                  </BindingProperties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel13">
                   <Properties>
