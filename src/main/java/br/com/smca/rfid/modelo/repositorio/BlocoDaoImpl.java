@@ -39,34 +39,34 @@ public class BlocoDaoImpl implements BlocoDao {
         em.getTransaction().commit();
         em.close();
     }
-    
+
     @Override
     public List<Bloco> pesquisar(Bloco bloco) {
         EntityManager em = Conexao.getEntityManager();
         StringBuilder sql = new StringBuilder("from Bloco b "
                 + "where 1 = 1 ");
-        if(bloco.getId() != null) {
+        if (bloco.getId() != null) {
             sql.append("and b.id = :id ");
         }
-        if(bloco.getNome() != null && !bloco.getNome().equals("")) {
+        if (bloco.getNome() != null && !bloco.getNome().equals("")) {
             sql.append("and b.nome like :nome ");
         }
         Query query = em.createQuery(sql.toString());
-        
-        if(bloco.getId() != null) {
+
+        if (bloco.getId() != null) {
             query.setParameter("id", bloco.getId());
         }
-        
-        if(bloco.getNome() != null && !bloco.getNome().equals("")) {
-            query.setParameter("nome", "%"+bloco.getNome()+"%");
+
+        if (bloco.getNome() != null && !bloco.getNome().equals("")) {
+            query.setParameter("nome", "%" + bloco.getNome() + "%");
         }
         return query.getResultList();
     }
 
     @Override
-    public List<Bloco> listar() {
+    public List<Bloco> listarTodos() {
         EntityManager em = Conexao.getEntityManager();
-        Query query = em.createQuery("SELECT b FROM Bloco", Bloco.class);
-        return query.getResultList();
+        return em.createQuery("SELECT b FROM Bloco as b", Bloco.class).getResultList();
+        //return manager.createQuery("SELECT u FROM Unidade AS u", Unidade.class).getResultList();
     }
 }

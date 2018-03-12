@@ -28,13 +28,10 @@ public final class BlocoControl {
     private Bloco blocoSelecionado;
     private List<Bloco> blocosTabela;
     private final BlocoDao blocoDao;
-    private final List<Bloco> blocos;
 
     public BlocoControl() {
         blocoDao = ServiceLocator.getBlocoDao();
         blocosTabela = ObservableCollections.observableList(new ArrayList<>());
-        blocos = blocoDao.listar();
-        
         novo();
         pesquisar();
     }
@@ -77,10 +74,6 @@ public final class BlocoControl {
         this.blocosTabela = blocosTabela;
     }
 
-    public List<Bloco> getBlocos() {
-        return blocos;
-    }
-    
     public void salvar() throws ValidacaoException  {
         blocoDigitado.validar();
         blocoDao.salvarAtualizar(blocoDigitado);

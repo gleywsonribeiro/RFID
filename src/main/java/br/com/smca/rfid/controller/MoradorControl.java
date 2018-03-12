@@ -5,8 +5,11 @@
  */
 package br.com.smca.rfid.controller;
 
+import br.com.smca.rfid.modelo.Bloco;
 import br.com.smca.rfid.modelo.Morador;
+import br.com.smca.rfid.modelo.repositorio.BlocoDao;
 import br.com.smca.rfid.modelo.repositorio.MoradorDao;
+import br.com.smca.rfid.modelo.service.ServiceLocator;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import java.util.ArrayList;
@@ -24,14 +27,16 @@ public class MoradorControl {
     private Morador moradorDigitado;
     private Morador moradorSelecionado;
 
-    private List<Morador> moradoresTabela;
-
+//    private List<Morador> moradoresTabela;
+    
     private final MoradorDao moradorDao;
+
+    
 
     public MoradorControl() {
         this.moradorDao = new MoradorDao();
-        moradoresTabela = ObservableCollections.observableList(new ArrayList<>());
-
+//        moradoresTabela = ObservableCollections.observableList(new ArrayList<>());
+        
         novo();
         pesquisar();
     }
@@ -41,14 +46,15 @@ public class MoradorControl {
     }
 
     public void pesquisar() {
-        moradoresTabela.clear();
-        moradoresTabela.addAll(moradorDao.pesquisar(moradorDigitado));
+//        moradoresTabela.clear();
+//        moradoresTabela.addAll(moradorDao.pesquisar(moradorDigitado));
     }
 
     public Morador getMoradorDigitado() {
         return moradorDigitado;
     }
 
+    
     public void setMoradorDigitado(Morador moradorDigitado) {
         Morador oldMoradorDigitado = this.moradorDigitado;
         this.moradorDigitado = moradorDigitado;
@@ -61,35 +67,35 @@ public class MoradorControl {
 
     public void setMoradorSelecionado(Morador moradorSelecionado) {
         this.moradorSelecionado = moradorSelecionado;
-        if(moradorSelecionado != null) {
+        if (moradorSelecionado != null) {
             setMoradorDigitado(moradorSelecionado);
         }
     }
 
-    public List<Morador> getMoradoresTabela() {
-        return moradoresTabela;
-    }
+//    public List<Morador> getMoradoresTabela() {
+//        return moradoresTabela;
+//    }
+//
+//    public void setMoradoresTabela(List<Morador> moradoresTabela) {
+//        this.moradoresTabela = moradoresTabela;
+//    }
 
-    public void setMoradoresTabela(List<Morador> moradoresTabela) {
-        this.moradoresTabela = moradoresTabela;
-    }
-    
     public void salvar() {
         moradorDao.salvarAtualizar(moradorDigitado);
         novo();
         pesquisar();
     }
-    
+
     public void excluir() {
         moradorDao.excluir(moradorDigitado);
         novo();
         pesquisar();
     }
-    
+
     public void addPropertyChangeListener(PropertyChangeListener listener) {
         changeSupport.addPropertyChangeListener(listener);
     }
-    
+
     public void removePropertyChangeListener(PropertyChangeListener listener) {
         changeSupport.removePropertyChangeListener(listener);
     }

@@ -77,7 +77,7 @@ public class Bloco implements Serializable {
 
     @Override
     public String toString() {
-        return "br.com.smca.modelo.Bloco[ id=" + id + " ]";
+        return this.nome;
     }
     
 }
