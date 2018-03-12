@@ -27,7 +27,7 @@ public class MoradorControl {
     private Morador moradorDigitado;
     private Morador moradorSelecionado;
 
-//    private List<Morador> moradoresTabela;
+    private List<Morador> moradoresTabela;
     
     private final MoradorDao moradorDao;
 
@@ -35,7 +35,7 @@ public class MoradorControl {
 
     public MoradorControl() {
         this.moradorDao = new MoradorDao();
-//        moradoresTabela = ObservableCollections.observableList(new ArrayList<>());
+        moradoresTabela = ObservableCollections.observableList(new ArrayList<>());
         
         novo();
         pesquisar();
@@ -46,8 +46,8 @@ public class MoradorControl {
     }
 
     public void pesquisar() {
-//        moradoresTabela.clear();
-//        moradoresTabela.addAll(moradorDao.pesquisar(moradorDigitado));
+        moradoresTabela.clear();
+        moradoresTabela.addAll(moradorDao.pesquisar(moradorDigitado));
     }
 
     public Morador getMoradorDigitado() {
@@ -72,13 +72,13 @@ public class MoradorControl {
         }
     }
 
-//    public List<Morador> getMoradoresTabela() {
-//        return moradoresTabela;
-//    }
-//
-//    public void setMoradoresTabela(List<Morador> moradoresTabela) {
-//        this.moradoresTabela = moradoresTabela;
-//    }
+    public List<Morador> getMoradoresTabela() {
+        return moradoresTabela;
+    }
+
+    public void setMoradoresTabela(List<Morador> moradoresTabela) {
+        this.moradoresTabela = moradoresTabela;
+    }
 
     public void salvar() {
         moradorDao.salvarAtualizar(moradorDigitado);

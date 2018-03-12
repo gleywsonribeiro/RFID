@@ -40,24 +40,23 @@ public class MoradorDao {
 
     public List<Morador> pesquisar(Morador morador) {
         EntityManager em = Conexao.getEntityManager();
-//        StringBuilder sql = new StringBuilder("from Bloco b "
-//                + "where 1 = 1 ");
-//        if(bloco.getId() != null) {
-//            sql.append("and b.id = :id ");
-//        }
-//        if(bloco.getNome() != null && !bloco.getNome().equals("")) {
-//            sql.append("and b.nome like :nome ");
-//        }
-//        Query query = em.createQuery(sql.toString());
-//        
-//        if(bloco.getId() != null) {
-//            query.setParameter("id", bloco.getId());
-//        }
-//        
-//        if(bloco.getNome() != null && !bloco.getNome().equals("")) {
-//            query.setParameter("nome", "%"+bloco.getNome()+"%");
-//        }
-//        return query.getResultList();
-        return null;
+        StringBuilder sql = new StringBuilder("from Morador m "
+                + "where 1 = 1 ");
+        if (morador.getId() != null) {
+            sql.append("and m.id = :id ");
+        }
+        if (morador.getNome() != null && !morador.getNome().equals("")) {
+            sql.append("and m.nome like :nome ");
+        }
+        Query query = em.createQuery(sql.toString());
+
+        if (morador.getId() != null) {
+            query.setParameter("id", morador.getId());
+        }
+
+        if (morador.getNome() != null && !morador.getNome().equals("")) {
+            query.setParameter("nome", "%" + morador.getNome() + "%");
+        }
+        return query.getResultList();
     }
 }
