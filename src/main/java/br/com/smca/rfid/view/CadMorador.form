@@ -232,6 +232,11 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="txtCodigo">
+                  <Properties>
+                    <Property name="selectedTextColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ca" green="e4" red="ff" type="rgb"/>
+                    </Property>
+                  </Properties>
                   <BindingProperties>
                     <BindingProperty name="text" source="Form" sourcePath="${moradorControl.moradorDigitado.id}" target="txtCodigo" targetPath="text" updateStrategy="0" immediately="false">
                       <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
@@ -244,11 +249,19 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="txtNome">
+                  <Properties>
+                    <Property name="selectedTextColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ca" green="e4" red="ff" type="rgb"/>
+                    </Property>
+                  </Properties>
                   <BindingProperties>
                     <BindingProperty name="text" source="Form" sourcePath="${moradorControl.moradorDigitado.nome}" target="txtNome" targetPath="text" updateStrategy="0" immediately="false">
                       <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
                     </BindingProperty>
                   </BindingProperties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNomeActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel3">
                   <Properties>
@@ -296,6 +309,11 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="txtAndar">
+                  <Properties>
+                    <Property name="selectedTextColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ca" green="e4" red="ff" type="rgb"/>
+                    </Property>
+                  </Properties>
                   <BindingProperties>
                     <BindingProperty name="text" source="Form" sourcePath="${moradorControl.moradorDigitado.andar}" target="txtAndar" targetPath="text" updateStrategy="0" immediately="false">
                       <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
@@ -303,6 +321,11 @@
                   </BindingProperties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="txtApartamento">
+                  <Properties>
+                    <Property name="selectedTextColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ca" green="e4" red="ff" type="rgb"/>
+                    </Property>
+                  </Properties>
                   <BindingProperties>
                     <BindingProperty name="text" source="Form" sourcePath="${moradorControl.moradorDigitado.apartamento}" target="txtApartamento" targetPath="text" updateStrategy="0" immediately="false">
                       <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
@@ -352,6 +375,11 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="txtCpf">
+                  <Properties>
+                    <Property name="selectedTextColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ca" green="e4" red="ff" type="rgb"/>
+                    </Property>
+                  </Properties>
                   <BindingProperties>
                     <BindingProperty name="text" source="Form" sourcePath="${moradorControl.moradorDigitado.cpf}" target="txtCpf" targetPath="text" updateStrategy="0" immediately="false">
                       <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
@@ -367,6 +395,11 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="txtRg">
+                  <Properties>
+                    <Property name="selectedTextColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ca" green="e4" red="ff" type="rgb"/>
+                    </Property>
+                  </Properties>
                   <BindingProperties>
                     <BindingProperty name="text" source="Form" sourcePath="${moradorControl.moradorDigitado.rg}" target="txtRg" targetPath="text" updateStrategy="0" immediately="false">
                       <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
@@ -374,6 +407,11 @@
                   </BindingProperties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="txtCelular">
+                  <Properties>
+                    <Property name="selectedTextColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ca" green="e4" red="ff" type="rgb"/>
+                    </Property>
+                  </Properties>
                   <BindingProperties>
                     <BindingProperty name="text" source="Form" sourcePath="${moradorControl.moradorDigitado.celular}" target="txtCelular" targetPath="text" updateStrategy="0" immediately="false">
                       <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
@@ -381,6 +419,11 @@
                   </BindingProperties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="txtTelefone">
+                  <Properties>
+                    <Property name="selectedTextColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ca" green="e4" red="ff" type="rgb"/>
+                    </Property>
+                  </Properties>
                   <BindingProperties>
                     <BindingProperty name="text" source="Form" sourcePath="${moradorControl.moradorDigitado.telefone}" target="txtTelefone" targetPath="text" updateStrategy="0" immediately="false">
                       <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
@@ -407,6 +450,9 @@
                       <Format subtype="0" type="1"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="4"/>
+                    <Property name="selectedTextColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ca" green="e4" red="ff" type="rgb"/>
+                    </Property>
                   </Properties>
                   <BindingProperties>
                     <BindingProperty name="value" source="Form" sourcePath="${moradorControl.moradorDigitado.dataCadastro}" target="txtData" targetPath="value" updateStrategy="0" immediately="false"/>
@@ -476,6 +522,11 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="txtPlaca">
+                  <Properties>
+                    <Property name="selectedTextColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ca" green="e4" red="ff" type="rgb"/>
+                    </Property>
+                  </Properties>
                   <BindingProperties>
                     <BindingProperty name="text" source="Form" sourcePath="${moradorControl.moradorDigitado.placaVeiculo}" target="txtPlaca" targetPath="text" updateStrategy="0" immediately="false">
                       <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
@@ -483,6 +534,11 @@
                   </BindingProperties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="txtTag">
+                  <Properties>
+                    <Property name="selectedTextColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ca" green="e4" red="ff" type="rgb"/>
+                    </Property>
+                  </Properties>
                   <BindingProperties>
                     <BindingProperty name="text" source="Form" sourcePath="${moradorControl.moradorDigitado.tag}" target="txtTag" targetPath="text" updateStrategy="0" immediately="false">
                       <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
@@ -495,6 +551,11 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="txtNrGaragem">
+                  <Properties>
+                    <Property name="selectedTextColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ca" green="e4" red="ff" type="rgb"/>
+                    </Property>
+                  </Properties>
                   <BindingProperties>
                     <BindingProperty name="text" source="Form" sourcePath="${moradorControl.moradorDigitado.numeroGaragem}" target="txtNrGaragem" targetPath="text" updateStrategy="0" immediately="false">
                       <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>

@@ -106,13 +106,23 @@ public class CadMorador extends javax.swing.JInternalFrame {
 
         jLabel1.setText("Código");
 
+        txtCodigo.setSelectedTextColor(new java.awt.Color(255, 228, 202));
+
         org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${moradorControl.moradorDigitado.id}"), txtCodigo, org.jdesktop.beansbinding.BeanProperty.create("text"));
         bindingGroup.addBinding(binding);
 
         jLabel2.setText("Nome");
 
+        txtNome.setSelectedTextColor(new java.awt.Color(255, 228, 202));
+
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${moradorControl.moradorDigitado.nome}"), txtNome, org.jdesktop.beansbinding.BeanProperty.create("text"));
         bindingGroup.addBinding(binding);
+
+        txtNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNomeActionPerformed(evt);
+            }
+        });
 
         jLabel3.setText("Data Cadastro");
 
@@ -138,8 +148,12 @@ public class CadMorador extends javax.swing.JInternalFrame {
 
         jLabel4.setText("Andar");
 
+        txtAndar.setSelectedTextColor(new java.awt.Color(255, 228, 202));
+
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${moradorControl.moradorDigitado.andar}"), txtAndar, org.jdesktop.beansbinding.BeanProperty.create("text"));
         bindingGroup.addBinding(binding);
+
+        txtApartamento.setSelectedTextColor(new java.awt.Color(255, 228, 202));
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${moradorControl.moradorDigitado.apartamento}"), txtApartamento, org.jdesktop.beansbinding.BeanProperty.create("text"));
         bindingGroup.addBinding(binding);
@@ -163,16 +177,24 @@ public class CadMorador extends javax.swing.JInternalFrame {
 
         jLabel7.setText("CPF");
 
+        txtCpf.setSelectedTextColor(new java.awt.Color(255, 228, 202));
+
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${moradorControl.moradorDigitado.cpf}"), txtCpf, org.jdesktop.beansbinding.BeanProperty.create("text"));
         bindingGroup.addBinding(binding);
 
         jLabel8.setText("RG");
 
+        txtRg.setSelectedTextColor(new java.awt.Color(255, 228, 202));
+
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${moradorControl.moradorDigitado.rg}"), txtRg, org.jdesktop.beansbinding.BeanProperty.create("text"));
         bindingGroup.addBinding(binding);
 
+        txtCelular.setSelectedTextColor(new java.awt.Color(255, 228, 202));
+
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${moradorControl.moradorDigitado.celular}"), txtCelular, org.jdesktop.beansbinding.BeanProperty.create("text"));
         bindingGroup.addBinding(binding);
+
+        txtTelefone.setSelectedTextColor(new java.awt.Color(255, 228, 202));
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${moradorControl.moradorDigitado.telefone}"), txtTelefone, org.jdesktop.beansbinding.BeanProperty.create("text"));
         bindingGroup.addBinding(binding);
@@ -190,6 +212,7 @@ public class CadMorador extends javax.swing.JInternalFrame {
         txtData.setEditable(false);
         txtData.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
         txtData.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        txtData.setSelectedTextColor(new java.awt.Color(255, 228, 202));
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${moradorControl.moradorDigitado.dataCadastro}"), txtData, org.jdesktop.beansbinding.BeanProperty.create("value"));
         bindingGroup.addBinding(binding);
@@ -301,13 +324,19 @@ public class CadMorador extends javax.swing.JInternalFrame {
 
         jLabel11.setText("Placa");
 
+        txtPlaca.setSelectedTextColor(new java.awt.Color(255, 228, 202));
+
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${moradorControl.moradorDigitado.placaVeiculo}"), txtPlaca, org.jdesktop.beansbinding.BeanProperty.create("text"));
         bindingGroup.addBinding(binding);
+
+        txtTag.setSelectedTextColor(new java.awt.Color(255, 228, 202));
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${moradorControl.moradorDigitado.tag}"), txtTag, org.jdesktop.beansbinding.BeanProperty.create("text"));
         bindingGroup.addBinding(binding);
 
         jLabel12.setText("TAG");
+
+        txtNrGaragem.setSelectedTextColor(new java.awt.Color(255, 228, 202));
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${moradorControl.moradorDigitado.numeroGaragem}"), txtNrGaragem, org.jdesktop.beansbinding.BeanProperty.create("text"));
         bindingGroup.addBinding(binding);
@@ -633,6 +662,10 @@ public class CadMorador extends javax.swing.JInternalFrame {
             }
         }
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNomeActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
