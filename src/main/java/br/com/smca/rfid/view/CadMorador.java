@@ -106,6 +106,7 @@ public class CadMorador extends javax.swing.JInternalFrame {
 
         jLabel1.setText("Código");
 
+        txtCodigo.setEditable(false);
         txtCodigo.setSelectedTextColor(new java.awt.Color(255, 228, 202));
 
         org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${moradorControl.moradorDigitado.id}"), txtCodigo, org.jdesktop.beansbinding.BeanProperty.create("text"));

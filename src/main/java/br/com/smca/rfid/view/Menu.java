@@ -50,6 +50,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jMenu1.add(itemMenuCadastroMorador);
 
+        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/edit.png"))); // NOI18N
         jMenuItem2.setText("Cadastro de Bloco");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

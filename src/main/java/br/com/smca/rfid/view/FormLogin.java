@@ -55,13 +55,23 @@ public class FormLogin extends javax.swing.JDialog {
         jButton1.setText("Acessar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                acessar(evt);
             }
         });
 
         txtLogin.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        txtLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtLoginActionPerformed(evt);
+            }
+        });
 
         txtSenha.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        txtSenha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSenhaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -125,7 +135,7 @@ public class FormLogin extends javax.swing.JDialog {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void acessar(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_acessar
         // TODO add your handling code here:
         try {
             if(txtLogin.getText().equals("admin") && new String(txtSenha.getPassword()).equals("admin")) {
@@ -140,7 +150,17 @@ public class FormLogin extends javax.swing.JDialog {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Erro ao logar","Erro", JOptionPane.ERROR_MESSAGE);
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_acessar
+
+    private void txtLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLoginActionPerformed
+        // TODO add your handling code here:
+        acessar(evt);
+    }//GEN-LAST:event_txtLoginActionPerformed
+
+    private void txtSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenhaActionPerformed
+        // TODO add your handling code here:
+        acessar(evt);
+    }//GEN-LAST:event_txtSenhaActionPerformed
 
     /**
      * @param args the command line arguments

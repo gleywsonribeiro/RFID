@@ -58,6 +58,7 @@ public class FormBloco extends javax.swing.JInternalFrame {
 
         pnlBotoes.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        btnNovo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/edit.png"))); // NOI18N
         btnNovo.setText("Novo");
         btnNovo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -65,6 +66,7 @@ public class FormBloco extends javax.swing.JInternalFrame {
             }
         });
 
+        btnSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/disk.png"))); // NOI18N
         btnSalvar.setText("Salvar");
         btnSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -72,6 +74,7 @@ public class FormBloco extends javax.swing.JInternalFrame {
             }
         });
 
+        btnExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/lixeira.png"))); // NOI18N
         btnExcluir.setText("Excluir");
         btnExcluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -79,6 +82,7 @@ public class FormBloco extends javax.swing.JInternalFrame {
             }
         });
 
+        btnPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/lupa16.png"))); // NOI18N
         btnPesquisar.setText("Pesquisar");
         btnPesquisar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -154,6 +158,7 @@ public class FormBloco extends javax.swing.JInternalFrame {
                 .addContainerGap(25, Short.MAX_VALUE))
         );
 
+        tblDados.setToolTipText("Tabela de Dados");
         tblDados.getTableHeader().setReorderingAllowed(false);
 
         org.jdesktop.beansbinding.ELProperty eLProperty = org.jdesktop.beansbinding.ELProperty.create("${blocoControl.blocosTabela}");

@@ -84,6 +84,9 @@
       <SubComponents>
         <Component class="javax.swing.JButton" name="btnNovo">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/imagens/edit.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Novo"/>
           </Properties>
           <Events>
@@ -92,6 +95,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="btnSalvar">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/imagens/disk.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Salvar"/>
           </Properties>
           <Events>
@@ -100,6 +106,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="btnExcluir">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/imagens/lixeira.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Excluir"/>
           </Properties>
           <Events>
@@ -108,6 +117,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="btnPesquisar">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/imagens/lupa16.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Pesquisar"/>
           </Properties>
           <Events>
@@ -197,6 +209,7 @@
       <SubComponents>
         <Component class="javax.swing.JTable" name="tblDados">
           <Properties>
+            <Property name="toolTipText" type="java.lang.String" value="Tabela de Dados"/>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
               <TableColumnModel selectionModel="0">
                 <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
