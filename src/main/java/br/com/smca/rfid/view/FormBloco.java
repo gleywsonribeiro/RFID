@@ -7,6 +7,7 @@ package br.com.smca.rfid.view;
 
 import br.com.smca.rfid.controller.BlocoControl;
 import br.com.smca.rfid.util.ValidacaoException;
+import javax.persistence.PersistenceException;
 import javax.swing.JOptionPane;
 
 /**
@@ -16,6 +17,7 @@ import javax.swing.JOptionPane;
 public class FormBloco extends javax.swing.JInternalFrame {
 
     private BlocoControl blocoControl;
+
     /**
      * Creates new form FormBloco
      */
@@ -28,7 +30,6 @@ public class FormBloco extends javax.swing.JInternalFrame {
         return blocoControl;
     }
 
-    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -207,7 +208,7 @@ public class FormBloco extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         try {
             blocoControl.salvar();
-        JOptionPane.showMessageDialog(this, "Salvo com sucesso!", "Cadastro Bloco", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Salvo com sucesso!", "Cadastro Bloco", JOptionPane.INFORMATION_MESSAGE);
         } catch (ValidacaoException e) {
             JOptionPane.showMessageDialog(this, e.getMessage(), "Falha de Validação", JOptionPane.WARNING_MESSAGE);
         }
@@ -215,10 +216,14 @@ public class FormBloco extends javax.swing.JInternalFrame {
 
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
         // TODO add your handling code here:
-        if(JOptionPane.showConfirmDialog(this, "Deseja realmente excluir?", "Exclusão de Bloco", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
-            blocoControl.excluir();
-            JOptionPane.showMessageDialog(this, "Excluído com sucesso!", "exclusão de bloco", JOptionPane.INFORMATION_MESSAGE);
-        }
+        if (JOptionPane.showConfirmDialog(this, "Deseja realmente excluir?", "Exclusão de Bloco", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+            try {
+                blocoControl.excluir();
+                JOptionPane.showMessageDialog(this, "Excluído com sucesso!", "Exclusão de bloco", JOptionPane.INFORMATION_MESSAGE);
+            } catch (PersistenceException e) {
+                JOptionPane.showMessageDialog(this, e.getMessage(), "Exclusão de bloco", JOptionPane.ERROR_MESSAGE);
+            }
+        }//PersistenceException
     }//GEN-LAST:event_btnExcluirActionPerformed
 
     private void btnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarActionPerformed

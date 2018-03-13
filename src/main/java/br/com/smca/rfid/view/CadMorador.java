@@ -17,8 +17,7 @@ public class CadMorador extends javax.swing.JInternalFrame {
 
     private MoradorControl moradorControl;
     private BlocoControl blocoControl;
-  
-    
+
     public CadMorador() {
         moradorControl = new MoradorControl();
         blocoControl = new BlocoControl();
@@ -33,7 +32,6 @@ public class CadMorador extends javax.swing.JInternalFrame {
         return blocoControl;
     }
 
-    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -363,6 +361,11 @@ public class CadMorador extends javax.swing.JInternalFrame {
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/lixeira32.png"))); // NOI18N
         jButton2.setText("Excluir");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/novo32.png"))); // NOI18N
         jButton6.setText("Novo");
@@ -475,9 +478,9 @@ public class CadMorador extends javax.swing.JInternalFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton4, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton3))
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
@@ -595,7 +598,7 @@ public class CadMorador extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         try {
             moradorControl.salvar();
-        JOptionPane.showMessageDialog(this, "Salvo com sucesso!", "Cadastro de Morador", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Salvo com sucesso!", "Cadastro de Morador", JOptionPane.INFORMATION_MESSAGE);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Problema ao salvar", "Falha de Validação", JOptionPane.WARNING_MESSAGE);
         }
@@ -603,12 +606,33 @@ public class CadMorador extends javax.swing.JInternalFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
+        if (JOptionPane.showConfirmDialog(this, "Deseja realmente excluir?", "Exclusão de Morador", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+            try {
+                moradorControl.excluir();
+                JOptionPane.showMessageDialog(this, "Excluído com sucesso!", "exclusão de Morador", JOptionPane.INFORMATION_MESSAGE);
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(this, e.getMessage(), "Erro ao Excluir", JOptionPane.ERROR_MESSAGE);
+            }
+        }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
         moradorControl.novo();
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+
+        if (JOptionPane.showConfirmDialog(this, "Deseja realmente excluir?", "Exclusão de Morador", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+            try {
+                moradorControl.excluir();
+                JOptionPane.showMessageDialog(this, "Excluído com sucesso!", "exclusão de Morador", JOptionPane.INFORMATION_MESSAGE);
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(this, e.getMessage(), "Erro ao Excluir", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
