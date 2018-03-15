@@ -26,6 +26,7 @@ public class MoradorControl {
 
     private Morador moradorDigitado;
     private Morador moradorSelecionado;
+    private Morador moradorPesquisado;
 
     private List<Morador> moradoresTabela;
     
@@ -43,11 +44,12 @@ public class MoradorControl {
 
     public void novo() {
         setMoradorDigitado(new Morador());
+        setMoradorPesquisado(new Morador());
     }
 
     public void pesquisar() {
         moradoresTabela.clear();
-        moradoresTabela.addAll(moradorDao.pesquisar(moradorDigitado));
+        moradoresTabela.addAll(moradorDao.pesquisar(moradorPesquisado));
     }
 
     public Morador getMoradorDigitado() {
@@ -61,15 +63,27 @@ public class MoradorControl {
         changeSupport.firePropertyChange("moradorDigitado", oldMoradorDigitado, moradorDigitado);
     }
 
+    public Morador getMoradorPesquisado() {
+        return moradorPesquisado;
+    }
+
+    public void setMoradorPesquisado(Morador moradorPesquisado) {
+        Morador oldPesquisado = this.moradorPesquisado;
+        this.moradorPesquisado = moradorPesquisado;
+        changeSupport.firePropertyChange("moradorPesquisado", oldPesquisado, moradorPesquisado);
+    }
+    
+    
+
     public Morador getMoradorSelecionado() {
         return moradorSelecionado;
     }
 
     public void setMoradorSelecionado(Morador moradorSelecionado) {
         this.moradorSelecionado = moradorSelecionado;
-        if (moradorSelecionado != null) {
-            setMoradorDigitado(moradorSelecionado);
-        }
+//        if (moradorSelecionado != null) {
+//            setMoradorPesquisado(moradorSelecionado);
+//        }
     }
 
     public List<Morador> getMoradoresTabela() {
