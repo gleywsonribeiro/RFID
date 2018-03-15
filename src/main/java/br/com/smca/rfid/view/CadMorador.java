@@ -7,7 +7,18 @@ package br.com.smca.rfid.view;
 
 import br.com.smca.rfid.controller.BlocoControl;
 import br.com.smca.rfid.controller.MoradorControl;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.stage.FileChooser;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
  *
@@ -52,7 +63,7 @@ public class CadMorador extends javax.swing.JInternalFrame {
         txtNome = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
-        jLabel14 = new javax.swing.JLabel();
+        lblFoto = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         txtAndar = new javax.swing.JTextField();
         txtApartamento = new javax.swing.JTextField();
@@ -127,24 +138,26 @@ public class CadMorador extends javax.swing.JInternalFrame {
 
         jLabel3.setText("Data Cadastro");
 
-        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel14.setText("Inserir Foto");
-        jLabel14.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jLabel14.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${moradorControl.moradorDigitado.foto}"), jLabel14, org.jdesktop.beansbinding.BeanProperty.create("icon"));
-        bindingGroup.addBinding(binding);
+        lblFoto.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblFoto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblFoto.setText("Inserir Foto");
+        lblFoto.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lblFoto.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblFoto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblFotoMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE)
+            .addComponent(lblFoto, javax.swing.GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE)
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(lblFoto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jLabel4.setText("Andar");
@@ -668,6 +681,29 @@ public class CadMorador extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNomeActionPerformed
 
+    private void lblFotoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFotoMouseClicked
+        // TODO add your handling code here:
+        if(evt.getClickCount() == 2) {
+            try {
+                JFileChooser buscaFoto = new JFileChooser();
+                buscaFoto.setFileFilter(new FileNameExtensionFilter("Imagem", "bmp", "png", "jpg", "jpeg"));
+                buscaFoto.setAcceptAllFileFilterUsed(false);
+                
+                buscaFoto.setDialogTitle("Selecionar Imagem");
+                buscaFoto.showOpenDialog(this);
+                String caminho = ""+buscaFoto.getSelectedFile().getAbsolutePath();
+                File file = buscaFoto.getSelectedFile();
+                
+                BufferedImage bufferedImage = ImageIO.read(new File(caminho));
+                Image image = bufferedImage.getScaledInstance(lblFoto.getWidth(), lblFoto.getHeight(), 0);
+                lblFoto.setText("");
+                lblFoto.setIcon(new ImageIcon(image));
+            } catch (IOException ex) {
+                Logger.getLogger(CadMorador.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_lblFotoMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> comboBlocos;
@@ -682,7 +718,6 @@ public class CadMorador extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
@@ -707,6 +742,7 @@ public class CadMorador extends javax.swing.JInternalFrame {
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JLabel lblFoto;
     private javax.swing.JCheckBox snAtivo;
     private javax.swing.JTextField txtAndar;
     private javax.swing.JTextField txtApartamento;

@@ -16,6 +16,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
+import javax.persistence.Transient;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -70,9 +72,12 @@ public class Morador implements Serializable {
     @Column(name = "data_cadastro", nullable = false)
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date dataCadastro;
+    @Transient
+    private ImageIcon imagem;
 
     public Morador() {
         this.dataCadastro = new Date();
+        this.setAtivo(true);
     }
 
     public String getNome() {
@@ -202,6 +207,16 @@ public class Morador implements Serializable {
         return hash;
     }
 
+    public ImageIcon getImagem() {
+        return imagem;
+    }
+
+    public void setImagem(ImageIcon imagem) {
+        this.imagem = imagem;
+    }
+
+  
+    
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
