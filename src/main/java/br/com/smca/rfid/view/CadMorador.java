@@ -9,8 +9,11 @@ import br.com.smca.rfid.controller.BlocoControl;
 import br.com.smca.rfid.controller.MoradorControl;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.stage.FileChooser;
@@ -28,6 +31,7 @@ public class CadMorador extends javax.swing.JInternalFrame {
 
     private MoradorControl moradorControl;
     private BlocoControl blocoControl;
+    private String caminhoImagem;
 
     public CadMorador() {
         moradorControl = new MoradorControl();
@@ -646,11 +650,26 @@ public class CadMorador extends javax.swing.JInternalFrame {
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
         // TODO add your handling code here:
         try {
+            if(caminhoImagem != null) {
+                File arquivoImagem = new File(caminhoImagem);
+                byte[] arquivoEmBytes = new byte[(int)arquivoImagem.length()];
+                
+                try {
+                    FileInputStream fileInputStream = new FileInputStream(arquivoImagem);
+                    fileInputStream.read(arquivoEmBytes);
+                    fileInputStream.close();
+                } catch (IOException e) {
+                    JOptionPane.showMessageDialog(this, "Erro ao inserir Foto!", "Inserção de foto", JOptionPane.INFORMATION_MESSAGE);
+                }
+                moradorControl.getMoradorDigitado().setFoto(arquivoEmBytes);
+            }
             moradorControl.salvar();
+            lblFoto.setText("Inserir Foto");
+            lblFoto.setIcon(new ImageIcon());
             JOptionPane.showMessageDialog(this, "Salvo com sucesso!", "Cadastro de Morador", JOptionPane.INFORMATION_MESSAGE);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Problema ao salvar", "Falha de Validação", JOptionPane.WARNING_MESSAGE);
-        }
+        } 
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void btnApagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnApagarActionPerformed
@@ -669,6 +688,8 @@ public class CadMorador extends javax.swing.JInternalFrame {
     private void btnNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoActionPerformed
         // TODO add your handling code here:
         moradorControl.novo();
+        lblFoto.setText("Inserir Foto");
+        lblFoto.setIcon(null);
     }//GEN-LAST:event_btnNovoActionPerformed
 
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
@@ -677,6 +698,8 @@ public class CadMorador extends javax.swing.JInternalFrame {
         if (JOptionPane.showConfirmDialog(this, "Deseja realmente excluir?", "Exclusão de Morador", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
             try {
                 moradorControl.excluir();
+                lblFoto.setText("Inserir Foto");
+                lblFoto.setIcon(new ImageIcon());
                 JOptionPane.showMessageDialog(this, "Excluído com sucesso!", "exclusão de Morador", JOptionPane.INFORMATION_MESSAGE);
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(this, e.getMessage(), "Erro ao Excluir", JOptionPane.ERROR_MESSAGE);
@@ -698,10 +721,10 @@ public class CadMorador extends javax.swing.JInternalFrame {
 
                 buscaFoto.setDialogTitle("Selecionar Imagem");
                 buscaFoto.showOpenDialog(this);
-                String caminho = "" + buscaFoto.getSelectedFile().getAbsolutePath();
-                File file = buscaFoto.getSelectedFile();
+                caminhoImagem = "" + buscaFoto.getSelectedFile().getAbsolutePath();
+                //File file = buscaFoto.getSelectedFile();
 
-                BufferedImage bufferedImage = ImageIO.read(new File(caminho));
+                BufferedImage bufferedImage = ImageIO.read(new File(caminhoImagem));
                 Image image = bufferedImage.getScaledInstance(lblFoto.getWidth(), lblFoto.getHeight(), 0);
                 lblFoto.setText("");
                 lblFoto.setIcon(new ImageIcon(image));
@@ -716,6 +739,21 @@ public class CadMorador extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         if (moradorControl.getMoradorSelecionado() != null) {
             moradorControl.setMoradorDigitado(moradorControl.getMoradorSelecionado());
+            
+            byte[] fotoBytes = moradorControl.getMoradorDigitado().getFoto();
+            
+            if(fotoBytes != null) {
+                InputStream stream = new ByteArrayInputStream(fotoBytes);
+                try {
+                    BufferedImage foto = ImageIO.read(stream);
+                    Image fotoDimencionada = foto.getScaledInstance(lblFoto.getWidth(), lblFoto.getHeight(), 0);
+                    lblFoto.setText("");
+                    lblFoto.setIcon(new ImageIcon(fotoDimencionada));
+                } catch (IOException ex) {
+                    Logger.getLogger(CadMorador.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
+            }
             TabbedPaneMorador.setSelectedIndex(0);
         } else {
             JOptionPane.showMessageDialog(this, "Selecione um morador antes", "Edição de Morador", JOptionPane.WARNING_MESSAGE);
