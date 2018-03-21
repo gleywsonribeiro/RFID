@@ -753,6 +753,9 @@ public class CadMorador extends javax.swing.JInternalFrame {
                     Logger.getLogger(CadMorador.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 
+            } else {
+                lblFoto.setText("Inserir Foto");
+                lblFoto.setIcon(new ImageIcon());
             }
             TabbedPaneMorador.setSelectedIndex(0);
         } else {
