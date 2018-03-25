@@ -31,13 +31,29 @@ public class Menu extends javax.swing.JFrame {
 
         desktopPane = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu4 = new javax.swing.JMenu();
+        jMenuItem3 = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         itemMenuCadastroMorador = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
+        jMenu5 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jMenu4.setText("Movimentações");
+
+        jMenuItem3.setText("Registro");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(jMenuItem3);
+
+        jMenuBar1.add(jMenu4);
 
         jMenu1.setText("Cadastro");
 
@@ -61,6 +77,13 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
+        jMenu5.setText("Consultas");
+
+        jMenuItem1.setText("Movimentações por Morador");
+        jMenu5.add(jMenuItem1);
+
+        jMenuBar1.add(jMenu5);
+
         jMenu2.setText("Relatórios");
         jMenuBar1.add(jMenu2);
 
@@ -82,7 +105,7 @@ public class Menu extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 391, Short.MAX_VALUE)
+            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 393, Short.MAX_VALUE)
         );
 
         pack();
@@ -110,6 +133,13 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_jMenu3MouseClicked
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        // TODO add your handling code here:
+        FormMovimentacao formMov = new FormMovimentacao();
+        desktopPane.add(formMov);
+        formMov.setVisible(true);
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -154,7 +184,11 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
     // End of variables declaration//GEN-END:variables
 }
