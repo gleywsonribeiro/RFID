@@ -95,12 +95,14 @@
           <BindingProperties>
             <BindingProperty name="elements" source="Form" sourcePath="${movimentacaoControl.moradores}" target="jTable1" targetPath="elements" updateStrategy="0" immediately="true">
               <Subbinding sourcePath="${id}">
-                <BindingParameter name="NAME" value="Title 1"/>
+                <BindingParameter name="NAME" value="Id"/>
                 <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="Long.class"/>
+                <BindingParameter name="javax.swing.binding.ParameterKeys.EDITABLE" value="false"/>
               </Subbinding>
               <Subbinding sourcePath="${nome}">
-                <BindingParameter name="NAME" value="Title 2"/>
+                <BindingParameter name="NAME" value="Nome"/>
                 <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="String.class"/>
+                <BindingParameter name="javax.swing.binding.ParameterKeys.EDITABLE" value="false"/>
               </Subbinding>
             </BindingProperty>
             <BindingProperty name="selectedElement" source="Form" sourcePath="${movimentacaoControl.moradorSelecionado}" target="jTable1" targetPath="selectedElement" updateStrategy="0" immediately="false">

@@ -59,4 +59,10 @@ public class MoradorDao {
         }
         return query.getResultList();
     }
+    
+    public List<Morador> listarTudo() {
+        EntityManager em = Conexao.getEntityManager();
+        Query query = em.createQuery("SELECT m FROM Morador AS m", Morador.class);
+        return query.getResultList();
+    }
 }
