@@ -5,6 +5,8 @@
  */
 package br.com.smca.rfid.view;
 
+import br.com.smca.rfid.controller.MovimentacaoControl;
+
 /**
  *
  * @author Gleywson
@@ -14,10 +16,18 @@ public class FormMovimentacao extends javax.swing.JInternalFrame {
     /**
      * Creates new form FormMovimentacao
      */
+    MovimentacaoControl movimentacaoControl;
+    
     public FormMovimentacao() {
         initComponents();
+        movimentacaoControl = new MovimentacaoControl();
     }
 
+    public MovimentacaoControl getMovimentacaoControl() {
+        return movimentacaoControl;
+    }
+
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -26,6 +36,7 @@ public class FormMovimentacao extends javax.swing.JInternalFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        bindingGroup = new org.jdesktop.beansbinding.BindingGroup();
 
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
@@ -61,6 +72,9 @@ public class FormMovimentacao extends javax.swing.JInternalFrame {
 
         jTextField1.setEnabled(false);
 
+        org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${movimentacaoControl.moradorSelecionado.tag}"), jTextField1, org.jdesktop.beansbinding.BeanProperty.create("text"));
+        bindingGroup.addBinding(binding);
+
         btnBuscaMorador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/lupa16.png"))); // NOI18N
         btnBuscaMorador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -72,9 +86,16 @@ public class FormMovimentacao extends javax.swing.JInternalFrame {
 
         jTextField2.setEnabled(false);
 
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${movimentacaoControl.moradorSelecionado.nome}"), jTextField2, org.jdesktop.beansbinding.BeanProperty.create("text"));
+        bindingGroup.addBinding(binding);
+
         jLabel2.setText("Morador");
 
         jTextField3.setEnabled(false);
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${movimentacaoControl.moradorSelecionado.andar}"), jTextField3, org.jdesktop.beansbinding.BeanProperty.create("text"));
+        bindingGroup.addBinding(binding);
+
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField3ActionPerformed(evt);
@@ -84,6 +105,9 @@ public class FormMovimentacao extends javax.swing.JInternalFrame {
         jLabel3.setText("Andar");
 
         jTextField4.setEnabled(false);
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${movimentacaoControl.moradorSelecionado.apartamento}"), jTextField4, org.jdesktop.beansbinding.BeanProperty.create("text"));
+        bindingGroup.addBinding(binding);
 
         jLabel4.setText("Apt");
 
@@ -103,6 +127,9 @@ public class FormMovimentacao extends javax.swing.JInternalFrame {
         );
 
         jTextField5.setEnabled(false);
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${movimentacaoControl.moradorSelecionado.bloco.nome}"), jTextField5, org.jdesktop.beansbinding.BeanProperty.create("text"));
+        bindingGroup.addBinding(binding);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -182,6 +209,8 @@ public class FormMovimentacao extends javax.swing.JInternalFrame {
                 .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        bindingGroup.bind();
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -211,5 +240,6 @@ public class FormMovimentacao extends javax.swing.JInternalFrame {
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
+    private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
 }

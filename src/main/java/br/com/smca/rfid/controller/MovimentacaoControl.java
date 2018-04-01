@@ -36,11 +36,13 @@ public class MovimentacaoControl {
         movimentacaoDao = new MovimentacaoDao();
         moradorDao = new MoradorDao();
         moradores = ObservableCollections.observableList(new ArrayList<>());
+        pesquisar();
     }
     
     public void pesquisar() {
         moradores.clear();
-        moradores.addAll(moradorDao.pesquisar(moradorSelecionado));
+//        moradores.addAll(moradorDao.pesquisar(moradorSelecionado));
+        moradores.addAll(moradorDao.pesquisar(new Morador()));
     }
 
     public Morador getMoradorSelecionado() {
