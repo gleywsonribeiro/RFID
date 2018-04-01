@@ -5,11 +5,8 @@
  */
 package br.com.smca.rfid.controller;
 
-import br.com.smca.rfid.modelo.Bloco;
 import br.com.smca.rfid.modelo.Morador;
-import br.com.smca.rfid.modelo.repositorio.BlocoDao;
 import br.com.smca.rfid.modelo.repositorio.MoradorDao;
-import br.com.smca.rfid.modelo.service.ServiceLocator;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import java.util.ArrayList;

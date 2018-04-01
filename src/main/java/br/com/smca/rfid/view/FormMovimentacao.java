@@ -30,7 +30,7 @@ public class FormMovimentacao extends javax.swing.JInternalFrame {
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btnBuscaMorador = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -38,9 +38,9 @@ public class FormMovimentacao extends javax.swing.JInternalFrame {
         jLabel3 = new javax.swing.JLabel();
         jTextField4 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
+        jTextField5 = new javax.swing.JTextField();
 
         setClosable(true);
 
@@ -61,7 +61,12 @@ public class FormMovimentacao extends javax.swing.JInternalFrame {
 
         jTextField1.setEnabled(false);
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/lupa16.png"))); // NOI18N
+        btnBuscaMorador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/lupa16.png"))); // NOI18N
+        btnBuscaMorador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscaMoradorActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("TAG");
 
@@ -69,6 +74,7 @@ public class FormMovimentacao extends javax.swing.JInternalFrame {
 
         jLabel2.setText("Morador");
 
+        jTextField3.setEnabled(false);
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField3ActionPerformed(evt);
@@ -77,9 +83,9 @@ public class FormMovimentacao extends javax.swing.JInternalFrame {
 
         jLabel3.setText("Andar");
 
-        jLabel4.setText("Apt");
+        jTextField4.setEnabled(false);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jLabel4.setText("Apt");
 
         jLabel5.setText("Bloco");
 
@@ -96,17 +102,19 @@ public class FormMovimentacao extends javax.swing.JInternalFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
+        jTextField5.setEnabled(false);
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel1))
+                        .addComponent(btnBuscaMorador, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
@@ -124,8 +132,8 @@ public class FormMovimentacao extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
+                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -136,10 +144,11 @@ public class FormMovimentacao extends javax.swing.JInternalFrame {
                     .addComponent(jLabel2)
                     .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnBuscaMorador, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
@@ -151,8 +160,8 @@ public class FormMovimentacao extends javax.swing.JInternalFrame {
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 96, Short.MAX_VALUE))
+                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 100, Short.MAX_VALUE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addContainerGap())))
@@ -180,10 +189,15 @@ public class FormMovimentacao extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField3ActionPerformed
 
+    private void btnBuscaMoradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscaMoradorActionPerformed
+        // TODO add your handling code here:
+        DialogoMorador dialogoMorador = new DialogoMorador(null, true);
+        dialogoMorador.setVisible(true);
+    }//GEN-LAST:event_btnBuscaMoradorActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JButton btnBuscaMorador;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -196,5 +210,6 @@ public class FormMovimentacao extends javax.swing.JInternalFrame {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
     // End of variables declaration//GEN-END:variables
 }
