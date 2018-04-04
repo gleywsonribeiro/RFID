@@ -220,8 +220,9 @@ public class FormMovimentacao extends javax.swing.JInternalFrame {
 
     private void btnBuscaMoradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscaMoradorActionPerformed
         // TODO add your handling code here:
-        DialogoMorador dialogoMorador = new DialogoMorador(null, true);
-        dialogoMorador.setVisible(true);
+       DialogoMorador dialogoMorador = new DialogoMorador();
+       dialogoMorador.setVisible(true);
+            
     }//GEN-LAST:event_btnBuscaMoradorActionPerformed
 
 
